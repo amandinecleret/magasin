@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -24,13 +22,15 @@ import lombok.Data;
 @Table(name="produit")
 public class Produit {
 	@Id
+	@Column(name="produit_id")
 	private String produitId;
 	@Column(name="nom")
 	private String nom;
 	@Column(name="prix")
 	private Integer prix;
 	
-	@ManyToOne @JoinColumn(name="categoryId")
+	@ManyToOne(targetEntity = Categorie.class)
+	@JoinColumn(name="categorie_id" )
 	private Categorie categorie;
 	
 	@ManyToMany
