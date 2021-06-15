@@ -29,8 +29,8 @@ public class Commande {
 	@ManyToMany
 	@JoinTable(
 			name="commande_produit",
-			inverseJoinColumns= { @JoinColumn(name="produit_id", referencedColumnName = "produitId") },
-			joinColumns  = { @JoinColumn(name="commande_id", referencedColumnName = "commandeId") })
+			inverseJoinColumns= { @JoinColumn(name="produit_id") },
+			joinColumns  = { @JoinColumn(name="commande_id") })
 	private List<Produit> produits = new ArrayList<Produit>();
 
 }

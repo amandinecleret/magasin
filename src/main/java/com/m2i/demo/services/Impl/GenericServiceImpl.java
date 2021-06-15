@@ -6,10 +6,14 @@ import com.m2i.demo.services.GenericCrudService;
 
 import lombok.Data;
 
-@Data
 public class GenericServiceImpl<T> implements GenericCrudService<T> {
-	
+
 	private JpaRepository<T, String> repositorie;
+
+	public GenericServiceImpl(JpaRepository<T, String> repositorie) {
+		super();
+		this.repositorie = repositorie;
+	}
 
 	@Override
 	public List<T> findAll() {
@@ -35,8 +39,5 @@ public class GenericServiceImpl<T> implements GenericCrudService<T> {
 	public void delete(String id) {
 		this.repositorie.delete(null);
 
-		
 	}
 }
-
-	

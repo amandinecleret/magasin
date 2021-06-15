@@ -6,12 +6,10 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import lombok.Data;
 
@@ -33,11 +31,7 @@ public class Produit {
 	@JoinColumn(name="categorie_id" )
 	private Categorie categorie;
 	
-	@ManyToMany
-	@JoinTable(
-			name="commande_produit",
-			joinColumns = { @JoinColumn(name="produit_id", referencedColumnName = "produitId") },
-			inverseJoinColumns = { @JoinColumn(name="commande_id", referencedColumnName = "commandeId") })
+	@ManyToMany(mappedBy = "produits")
 	private List<Commande> commandes = new ArrayList<Commande>(); 
 
 }

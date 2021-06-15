@@ -26,7 +26,7 @@ public class Client {
 	@Column(name = "prenom")
 	private String prenom;
 	
-	@OneToMany(targetEntity=Commande.class, mappedBy="clientId")
+	@OneToMany(targetEntity=Commande.class, mappedBy="client")
 	private List<Commande> commandes = new ArrayList<Commande>(); 
 	
 }
