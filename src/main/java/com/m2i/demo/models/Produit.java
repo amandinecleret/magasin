@@ -73,9 +73,9 @@ public class Produit {
 		this.categorie = categorie;
 	}
 
-	public List<Commande> getCommandes() {
+	/*public List<Commande> getCommandes() {
 		return commandes;
-	}
+	}*/
 
 	public void setCommandes(List<Commande> commandes) {
 		this.commandes = commandes;

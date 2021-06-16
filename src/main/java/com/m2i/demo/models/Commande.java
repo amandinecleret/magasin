@@ -42,9 +42,9 @@ public class Commande {
 		this.commandeId = commandeId;
 	}
 
-	public Client getClient() {
+	/*public Client getClient() {
 		return client;
-	}
+	}*/
 
 	public void setClient(Client client) {
 		this.client = client;

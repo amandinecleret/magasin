@@ -60,9 +60,9 @@ public class Categorie {
 
 
 
-	public List<Produit> getProduits() {
+	/*public List<Produit> getProduits() {
 		return produits;
-	}
+	}*/
 
 
 
