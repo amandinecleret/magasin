@@ -16,7 +16,6 @@ import lombok.Data;
 
 
 @Entity
-@Data
 @Table(name="produit")
 public class Produit {
 	@Id
@@ -27,6 +26,61 @@ public class Produit {
 	@Column(name="prix")
 	private Integer prix;
 	
+	
+	
+	public Produit() {
+		super();
+	}
+
+	public Produit(String produitId, String nom, Integer prix, Categorie categorie, List<Commande> commandes) {
+		super();
+		this.produitId = produitId;
+		this.nom = nom;
+		this.prix = prix;
+		this.categorie = categorie;
+		this.commandes = commandes;
+	}
+
+	public String getProduitId() {
+		return produitId;
+	}
+
+	public void setProduitId(String produitId) {
+		this.produitId = produitId;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public Integer getPrix() {
+		return prix;
+	}
+
+	public void setPrix(Integer prix) {
+		this.prix = prix;
+	}
+
+	public Categorie getCategorie() {
+		return categorie;
+	}
+
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+
+	public List<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
+	}
+
 	@ManyToOne(targetEntity = Categorie.class)
 	@JoinColumn(name="categorie_id" )
 	private Categorie categorie;

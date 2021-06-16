@@ -2,6 +2,7 @@ package com.m2i.demo.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ import com.m2i.demo.services.Impl.CommandeServiceImpl;
 @RequestMapping("commandes")
 @CrossOrigin
 public class CommandeController {
+	
+	@Autowired
 	public CommandeServiceImpl service;
 	
 	@GetMapping("")
